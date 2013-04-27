@@ -2,7 +2,39 @@
     {
         "settings": [ "master" ],
         "appPort": "8666",
-        "specs": {}
+        "specs": {
+            "body":{
+                "type":"HTMLFrameMojit",
+                "config":{
+                    "deploy":true,
+                    "title":"Yummy demo",
+                    "child":{
+                        "type": "Body",
+                        "config":{
+                            "children":{
+                                "nav":{
+                                    "type":"Navigation"
+                                },
+                                "content":{
+                                    "type":"Content"
+                                },
+                                "footer":{
+                                    "type":"Footer"
+                                }
+                            }
+                        }
+                    },
+                        "assets":{
+                            "top":{
+                                "css":[
+                                "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css",
+                                "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-responsive.min.css"
+                                ]
+                            }
+                        }
+                }
+            }
+        }
     },
     {
         "settings": [ "environment:development" ],

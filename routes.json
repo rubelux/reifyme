@@ -1,4 +1,24 @@
 [{
-    "settings": [ "master" ]
+    "settings": [ "master" ],
+    "root":{
+    	"verbs":["get"],
+    	"path":"/",
+    	"call":"body.index"
+    },
+    "nav":{
+    	"verbs":["get"],
+    	"path":"/nav",
+    	"call": "nav.index"
+    },
+    "content":{
+    	"verbs":["get"],
+    	"path":"/content",
+    	"call": "content.index"
+    },
+    "footer":{
+    	"verbs":["get"],
+    	"path":"/foorter",
+    	"call":"footer.index"
+    }
 
 }]

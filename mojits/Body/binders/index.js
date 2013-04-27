@@ -54,4 +54,4 @@ YUI.add('BodyBinderIndex', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client', 'gallery-bootstrap']});
+}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client', 'gallery-bootstrap-tooltip']});

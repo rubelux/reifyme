@@ -7,7 +7,7 @@
                 "type":"HTMLFrameMojit",
                 "config":{
                     "deploy":true,
-                    "title":"Yummy demo",
+                    "title":"Reify.me",
                     "child":{
                         "type": "Body",
                         "config":{

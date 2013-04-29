@@ -21,4 +21,7 @@ var app = Mojito.createServer();
 // server. Adjust below to match the requirements of your hosting environment.
 // ---------------------------------------------------------------------------
 
-module.exports = app.listen();
+//module.exports = app.listen();
+
+module.exports = app.listen(process.env.VCAP_APP_PORT || 3000);
+

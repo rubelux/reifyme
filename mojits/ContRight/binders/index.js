@@ -2,18 +2,18 @@
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('BodyBinderIndex', function(Y, NAME) {
+YUI.add('ContRightBinderIndex', function(Y, NAME) {
 
 /**
- * The BodyBinderIndex module.
+ * The ContRightBinderIndex module.
  *
- * @module BodyBinderIndex
+ * @module ContRightBinderIndex
  */
 
     /**
-     * Constructor for the BodyBinderIndex class.
+     * Constructor for the ContRightBinderIndex class.
      *
-     * @class BodyBinderIndex
+     * @class ContRightBinderIndex
      * @constructor
      */
     Y.namespace('mojito.binders')[NAME] = {
@@ -23,20 +23,7 @@ YUI.add('BodyBinderIndex', function(Y, NAME) {
          * have been constructed.
          */
         init: function(mojitProxy) {
-            Y.log("mojitProxy.getChildren(): ");
-            Y.log("Entering MasterMojitBinderIndex");
-            
-        /*    var mp = this.mojitProxy = mojitProxy;
-
-            this.mojitProxy.listen('fire-mesage', function(message){
-
-                var c = mp.getChildren()
-                 ,  recieverID =c['receiver'].viewID;
-
-                Y.log('intercepted fire-link event: ' + payload.data.url, 'info', NAME); 
-                mojitProxy.broadcast('broadcast-link', {url: payload.data.url},{ target: {viewId:receiverID }});
-
-            })*/
+            this.mojitProxy = mojitProxy;
         },
 
         /**
@@ -67,4 +54,4 @@ YUI.add('BodyBinderIndex', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client', 'gallery-bootstrap-tooltip']});
+}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client']});

@@ -15,7 +15,17 @@
                                     "type":"Navigation"
                                 },
                                 "content":{
-                                    "type":"Content"
+                                    "type":"Content",
+                                    "config":{
+                                        "children":{
+                                            "contLeft":{
+                                                "type":"ContLeft"
+                                            },
+                                            "contRight":{
+                                                "type":"ContRight"
+                                            }
+                                        }
+                                    }
                                 },
                                 "footer":{
                                     "type":"Footer"

@@ -15,6 +15,16 @@
     	"path":"/content",
     	"call": "content.index"
     },
+    "contLeft":{
+        "verbs":["get"],
+        "path":"/contLeft",
+        "call": "contLeft.index"
+    },
+    "contRight":{
+        "verbs":["get"],
+        "path":"/contRight",
+        "call": "contRight.index"
+    },
     "footer":{
     	"verbs":["get"],
     	"path":"/foorter",

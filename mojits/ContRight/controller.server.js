@@ -18,26 +18,18 @@ YUI.add('ContRight', function(Y, NAME) {
      */
     Y.namespace('mojito.controllers')[NAME] = {
 
-        /**
-         * Method corresponding to the 'index' action.
-         *
-         * @param ac {Object} The ActionContext that provides access
-         *        to the Mojito API.
-         */
+       
         index: function(ac) {
-            ac.models.get('ContRightModelFoo').getData(function(err, data) {
-                if (err) {
-                    ac.error(err);
-                    return;
-                }
-                ac.assets.addCss('./index.css');
-                ac.done({
-                    status: 'Mojito is working.',
-                    data: data
-                });
-            });
+            ac.done({title: 'this is my title'});
+        },
+        show:function(ac){
+            var url = ac.params.getFromMerged('url') || 'http://www.rubelux.net' ; 
+            ac.done({title: 'this is my try' + url , url: url});
+
+            
+
         }
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-assets-addon', 'mojito-models-addon', 'ContRightModelFoo']});
+}, '0.0.1', {requires: ['mojito-params-addon']});

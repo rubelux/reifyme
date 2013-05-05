@@ -4,18 +4,7 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
 YUI.add('ContLeftBinderIndex', function(Y, NAME) {
 
-/**
- * The ContLeftBinderIndex module.
- *
- * @module ContLeftBinderIndex
- */
 
-    /**
-     * Constructor for the ContLeftBinderIndex class.
-     *
-     * @class ContLeftBinderIndex
-     * @constructor
-     */
     Y.namespace('mojito.binders')[NAME] = {
 
         /**
@@ -23,7 +12,7 @@ YUI.add('ContLeftBinderIndex', function(Y, NAME) {
          * have been constructed.
          */
         init: function(mojitProxy) {
-            this.mojitProxy = mojitProxy;
+            this.mp = mojitProxy;
         },
 
         /**
@@ -33,8 +22,21 @@ YUI.add('ContLeftBinderIndex', function(Y, NAME) {
          * @param node {Node} The DOM node to which this mojit is attached.
          */
         bind: function(node) {
-            var me = this;
+            var me = this
+             ,  mp = this.mp;
             this.node = node;
+
+            this.node.all('ul li a').on('click', function(e){
+               
+                e.halt();
+                //e.preventDefault();
+                var url = e.currentTarget.get('href');
+
+                mp.broadcast('fire-links', {url: url});
+
+                Y.log("url  "+url)
+            })
+
             /**
              * Example code for the bind method:
              *
@@ -54,4 +56,4 @@ YUI.add('ContLeftBinderIndex', function(Y, NAME) {
 
     };
 
-}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client']});
+}, '0.0.1', {requires: ['node', 'mojito-client']});

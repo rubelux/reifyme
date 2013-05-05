@@ -23,7 +23,20 @@ YUI.add('ContentBinderIndex', function(Y, NAME) {
          * have been constructed.
          */
         init: function(mojitProxy) {
-            this.mojitProxy = mojitProxy;
+           var mp = this.mp = this.mojitProxy = mojitProxy;
+          
+
+            this.mp.listen('fire-links', function(links){
+
+                Y.log('fire-links event is cupture')
+                var c = mp.getChildren()
+                 ,  receiverID = c["contRight"].viewId;
+
+                Y.log('intercepted fire-link event: ' + links.data.url, 'info', NAME);
+                Y.log('receiverID: ' + receiverID);
+
+                mojitProxy.broadcast('broadcast-link', {url: links.data.url},{ target: {viewId:receiverID }});  
+            });
         },
 
         /**

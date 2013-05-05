@@ -50,6 +50,14 @@
         "settings": [ "environment:development" ],
         "staticHandling": {
             "forceUpdate": true
+        },
+        "viewEngine":{
+            "cacheTemplates":false
+        },
+        "yui":{
+            "config":{
+                "combine": false
+            }
         }
     }
 ]

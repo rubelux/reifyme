@@ -23,8 +23,7 @@ YUI.add('BodyBinderIndex', function(Y, NAME) {
          * have been constructed.
          */
         init: function(mojitProxy) {
-            Y.log("mojitProxy.getChildren(): ");
-            Y.log("Entering MasterMojitBinderIndex");
+        
             
         /*    var mp = this.mojitProxy = mojitProxy;
 

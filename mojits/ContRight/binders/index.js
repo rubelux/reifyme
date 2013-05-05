@@ -4,26 +4,31 @@
 /*jslint anon:true, sloppy:true, nomen:true*/
 YUI.add('ContRightBinderIndex', function(Y, NAME) {
 
-/**
- * The ContRightBinderIndex module.
- *
- * @module ContRightBinderIndex
- */
 
-    /**
-     * Constructor for the ContRightBinderIndex class.
-     *
-     * @class ContRightBinderIndex
-     * @constructor
-     */
     Y.namespace('mojito.binders')[NAME] = {
 
-        /**
-         * Binder initialization method, invoked after all binders on the page
-         * have been constructed.
-         */
+ 
         init: function(mojitProxy) {
+
             this.mojitProxy = mojitProxy;
+            var self = this;
+
+            this.mojitProxy.listen('broadcast-link', function(payload) {
+
+                Y.log('Intercepted broadcast-link event: ' + payload.data.url, 'info', NAME);
+
+                var params = {
+                    url: {
+                        url: payload.data.url
+                    }
+                };
+
+                mojitProxy.invoke('show', {params: params}, function(err, markup){
+
+                    self.node.setContent(markup);
+
+                })
+            });    
         },
 
         /**
@@ -35,23 +40,9 @@ YUI.add('ContRightBinderIndex', function(Y, NAME) {
         bind: function(node) {
             var me = this;
             this.node = node;
-            /**
-             * Example code for the bind method:
-             *
-             * node.all('dt').on('mouseenter', function(evt) {
-             *   var dd = '#dd_' + evt.target.get('text');
-             *   me.node.one(dd).addClass('sel');
-             *
-             * });
-             * node.all('dt').on('mouseleave', function(evt) {
-             *   
-             *   var dd = '#dd_' + evt.target.get('text');
-             *   me.node.one(dd).removeClass('sel');
-             *
-             * });
-             */
+         
         }
 
     };
 
-}, '0.0.1', {requires: ['event-mouseenter', 'mojito-client']});
+}, '0.0.1', {requires: ['mojito-client']});

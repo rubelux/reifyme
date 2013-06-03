@@ -1,6 +1,12 @@
 [
     {
         "settings": [ "master" ],
+        "middleware": [
+          "middleware/connect-cookie-parser", 
+          "middleware/connect-session",  
+          "middleware/passport",
+          "middleware/passport-session"         
+    ],
         "specs": {
             "body":{
                 "type":"HTMLFrameMojit",
@@ -18,6 +24,9 @@
                                     "type":"Content",
                                     "config":{
                                         "children":{
+                                            "login":{
+                                                "type":"login"
+                                            },
                                             "contLeft":{
                                                 "type":"ContLeft"
                                             },
@@ -29,10 +38,14 @@
                                 },
                                 "footer":{
                                     "type":"Footer"
+                                },
+                                "login_submit" : {
+                                   "type" : "loginSubmit"
                                 }
                             }
                         }
                     },
+
                         "assets":{
                             "top":{
                                 "css":[
@@ -43,9 +56,14 @@
                             }
                         }
                 }
+            },
+            "login_submit" : {
+                "type" : "loginSubmit"
             }
         }
+
     },
+
     {
         "settings": [ "environment:development" ],
         "staticHandling": {

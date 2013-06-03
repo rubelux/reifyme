@@ -15,6 +15,16 @@
     	"path":"/content",
     	"call": "content.index"
     },
+    "login":{
+        "verbs":["get"],
+        "path":"/login",
+        "call": "login.index"
+    },
+    "login_submit": {
+      "verbs": ["get", "post"],
+      "path": "/login_submit",
+      "call": "login_submit.submit"
+    },
     "contLeft":{
         "verbs":["get"],
         "path":"/contLeft",

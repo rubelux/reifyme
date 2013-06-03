@@ -7,9 +7,14 @@ YUI.add('Content', function(Y, NAME) {
     Y.namespace('mojito.controllers')[NAME] = {
 
         index: function(ac) {
+        	/*var req = ac.http.getRequest(),
+                passport = req.passport;
+
+                Y.log(passport)*/
+           
             ac.composite.done();
         }
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-composite-addon']});
+}, '0.0.1', {requires: ['mojito', 'mojito-composite-addon', 'mojito-http-addon']});

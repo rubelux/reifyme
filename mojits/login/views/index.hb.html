@@ -1,0 +1,39 @@
+<div id="{{mojit_view_id}}" class="modal">
+{{#if username}}
+		<h2>Hello, {{username}}</h2>
+
+	{{else}}
+    <!--<form class="form-horizontal">
+            <div class="control-group"> 
+            	<div class="controls"> 
+            		<input name="textinput1" placeholder="Email" class="span2" type="text">
+            	</div>
+            </div>
+            <div class="control-group">
+            		<div class="controls"> 
+            			<input name="textinput2" placeholder="Password" class="span2" type="password">
+            		</div>
+            </div>
+            <div class="control-group">
+   		 		<div class="controls">
+            		<button class="btn">
+              			Sign in
+              		</button>
+            	</div>
+            </div>	
+    </form>-->
+        <form action="/login_submit" method="post" id='myForm'>
+        <div>
+        <label>Username:</label>
+        <input id="userName" type="text" name="username"/><br/>
+        </div>
+        <div>
+        <label>Password:</label>
+        <input id="password" type="password" name="password"/>
+        </div>
+        <div>
+        <input type="submit" value="Submit" id="mySub"/>
+        </div>
+    </form>
+    {{/if}}	
+</div>

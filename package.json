@@ -13,7 +13,9 @@
         }
     ],
     "dependencies": {
-        "mojito": "0.5.x"
+        "mojito": "0.5.x",
+        "passport": "latest",
+        "passport-local": "latest"
     },
     "engines": {
         "node": ">0.6"

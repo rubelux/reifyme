@@ -1,0 +1,211 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '--global',
+1 verbose cli   'mojito-cli' ]
+2 info using npm@1.1.65
+3 info using node@v0.8.14
+4 verbose read json /usr/local/lib/package.json
+5 verbose read json /usr/local/lib/package.json
+6 verbose cache add [ 'mojito-cli', null ]
+7 silly cache add name=undefined spec="mojito-cli" args=["mojito-cli",null]
+8 verbose parsed url { pathname: 'mojito-cli',
+8 verbose parsed url   path: 'mojito-cli',
+8 verbose parsed url   href: 'mojito-cli' }
+9 silly lockFile 80cca74b-mojito-cli mojito-cli
+10 verbose lock mojito-cli /Users/cucumber/.npm/80cca74b-mojito-cli.lock
+11 silly lockFile 80cca74b-mojito-cli mojito-cli
+12 verbose addNamed [ 'mojito-cli', '' ]
+13 verbose addNamed [ null, '' ]
+14 silly lockFile 38a68036-mojito-cli mojito-cli@
+15 verbose lock mojito-cli@ /Users/cucumber/.npm/38a68036-mojito-cli.lock
+16 silly addNameRange { name: 'mojito-cli', range: '', hasData: false }
+17 verbose url raw mojito-cli
+18 verbose url resolving [ 'https://registry.npmjs.org/', './mojito-cli' ]
+19 verbose url resolved https://registry.npmjs.org/mojito-cli
+20 info trying registry request attempt 1 at 16:24:43
+21 verbose etag "76ZCHTGPO78FE24KCCSK0XDS2"
+22 http GET https://registry.npmjs.org/mojito-cli
+23 http 304 https://registry.npmjs.org/mojito-cli
+24 silly registry.get cb [ 304,
+24 silly registry.get   { server: 'CouchDB/1.3.0 (Erlang OTP/R15B03)',
+24 silly registry.get     etag: '"76ZCHTGPO78FE24KCCSK0XDS2"',
+24 silly registry.get     date: 'Sun, 09 Jun 2013 15:21:16 GMT',
+24 silly registry.get     'content-length': '0' } ]
+25 verbose etag mojito-cli from cache
+26 silly addNameRange number 2 { name: 'mojito-cli', range: '', hasData: true }
+27 silly addNameRange versions [ 'mojito-cli',
+27 silly addNameRange   [ '0.0.0PR1', '0.0.0PR2', '0.0.1', '0.0.2', '0.0.3', '0.0.4' ] ]
+28 verbose addNamed [ 'mojito-cli', '0.0.4' ]
+29 verbose addNamed [ '0.0.4', '0.0.4' ]
+30 silly lockFile bb642d7a-mojito-cli-0-0-4 mojito-cli@0.0.4
+31 verbose lock mojito-cli@0.0.4 /Users/cucumber/.npm/bb642d7a-mojito-cli-0-0-4.lock
+32 verbose read json /Users/cucumber/.npm/mojito-cli/0.0.4/package/package.json
+33 silly lockFile bb642d7a-mojito-cli-0-0-4 mojito-cli@0.0.4
+34 silly lockFile 38a68036-mojito-cli mojito-cli@
+35 silly resolved [ { name: 'mojito-cli',
+35 silly resolved     version: '0.0.4',
+35 silly resolved     description: 'The mojito-cli package provides command line helpers for Mojito developers.',
+35 silly resolved     bin: { mojito: 'bin/mojito' },
+35 silly resolved     main: 'cli.js',
+35 silly resolved     preferGlobal: true,
+35 silly resolved     dependencies:
+35 silly resolved      { 'mojito-cli-build': '~0.0.1',
+35 silly resolved        'mojito-cli-create': '~0.0.4',
+35 silly resolved        'mojito-cli-doc': '~0.0.1',
+35 silly resolved        'mojito-cli-jslint': '~0.0.1',
+35 silly resolved        'mojito-cli-start': '~0.0.1',
+35 silly resolved        'mojito-cli-test': '~0.0.2',
+35 silly resolved        nopt: '~2.1.1',
+35 silly resolved        npmlog: '0.0.2' },
+35 silly resolved     devDependencies: { tap: '~0.4.1' },
+35 silly resolved     engines: { node: '>0.8', npm: '>1.1' },
+35 silly resolved     scripts:
+35 silly resolved      { lint: 'jshint {.,lib,commands}/*.js',
+35 silly resolved        test: 'tap tests/index.js',
+35 silly resolved        cover: 'istanbul cover --dir artifacts/coverage tests',
+35 silly resolved        clean: 'git clean -dfx {.,tests,tests/fixtures}/artifacts',
+35 silly resolved        preinstall: 'scripts/preinstall.sh' },
+35 silly resolved     repository: { type: 'git', url: 'git://github.com/yahoo/mojito-cli.git' },
+35 silly resolved     bugs: 'https://github.com/yahoo/mojito-cli/issues',
+35 silly resolved     author: { name: 'Isao Yagi', email: 'isao@yahoo-inc.com' },
+35 silly resolved     license: 'BSD',
+35 silly resolved     readmeFilename: 'README.md',
+35 silly resolved     readme: 'mojito-cli [![Build Status](https://travis-ci.org/yahoo/mojito-cli.png)](https://travis-ci.org/yahoo/mojito-cli)\n==========\n\n`mojito-cli` is a command-line tool for [Mojito](https://github.com/yahoo/mojito) application developers. \nThe components of `mojito` that are unrelated to the core library and runtime will be moving to separate packages.\n\n_* * * For more information on the command-line package changes and the \ncurrent status, see the [mojito-cli Wiki](https://github.com/yahoo/mojito-cli/wiki). * * *_\n\nInstall mojito-cli\n------------------\n\n1. With [npm](http://npmjs.org/), do the following:\n \n        $ npm install --global mojito-cli\n\n1. Confirm that `mojito-cli` has been installed.\n\n        $ mojito help\n\nNote that if `mojito` was already installed globally, it will be uninstalled. It is recommended to only \ninstall the core `mojito` package as a local dependency in your Mojito application. Users should not \nlose any functionality.\n\nQuick Start\n-----------\n\n1. Create an app (which installs `mojito` locally using npm) and a mojit.\n\n        $ mojito create app myapp\n        $ cd myapp\n        $ mojito create mojito hellomojit\n\n1. Start the server.\n    \n        $ mojito start\n1. In a browser, open the following URL: `http://localhost:8666/@hellomojit/index`\n \nCommands\n--------\n\n### help\n\nTo show top-level help for this command-line tool:\n\n    $ mojito help\n\nTo show help for a specific command:\n\n    $ mojito help <command>\n\n### version\n\nTo show the version for `mojito-cli`:\n\n    $ mojito version\n\nTo show the version of an application, run the following from the application directory:\n\n    $ mojito version app\n\nThe version of the mojito runtime installed locally to your app will be displayed as well.\n\nTo show the version of a mojit, run the following from the application directory:\n\n    $ mojito version mojit <mojit-name>\n\n### create\n\nTo generate boilerplate files from the Mojito archetypes or other templates:\n\n    $ mojito create [options] <type> [subtype] <name>\n    $ mojito create [options] <from> <to>\n\nTo learn how to do some simple key/value replacement, see \n[mojito-cli-create](http://github.com/yahoo/mojito-cli-create).\n\n### build\n\nTo generate a static snapshot of your Mojito application:\n\n    $ mojito build [options] html5app [dest]\n\nSee [mojito-cli-build](http://github.com/yahoo/mojito-cli-build) for more information.\n\n### doc\n\nTo generate API documentation using [yuidocjs](https://github.com/yui/yuidoc):\n\n    $ mojito doc [options] <app|mojit|mojito> [name]\n\nSee also [mojito-cli-doc](http://github.com/yahoo/mojito-cli-doc).\n\n### jslint\n\nTo find common coding pitfalls with static analysis using [jslint](https://github.com/reid/node-jslint):\n\n    $ mojito jslint [app|mojit] <path>\n\nSee [mojito-cli-jslint](http://github.com/yahoo/mojito-cli-jslint).\n\n### start\n\nTo start the server and run the application:\n\n    $ mojito start [<port>] [--context key1:value1,key2:value2]\n\nThe port number specified in the command above overrides the port number in the application \nconfiguration file, `application.json`. The default port number is 8666. \nSee [Specifying Context](http://developer.yahoo.com/cocktails/mojito/docs/reference/mojito_cmdline.html#mj-cmdline-context) \nto learn how to use the `--context` option.\n\nSee [mojito-cli-start](http://github.com/yahoo/mojito-cli-start).\n\n### test\n\nTo run unit tests for a Mojito application:\n\n    $  mojito test app\n\nTo run unit tests for a specific mojit:\n\n    $ mojito test mojit <mojit-name>\n\nOr:\n\n    $ mojito test mojit <mojit-path>\n\nSee [mojito-cli-test](http://github.com/yahoo/mojito-cli-test) for more details.\n\n### other...\n\nWhen you are in the top level of a Mojito application directory, you can perform other Mojito \ncommands which are delegated to the locally installed `mojito` package. More information is provided \nin [Mojito Command Line](http://developer.yahoo.com/cocktails/mojito/docs/reference/mojito_cmdline.html).\n\nNode packages accessible via `require` that begin with `mojito-cli-` can also be invoked, \nsimilar to `git`, `brew`, and `yogi`. For example, if `mojito-cli-foo` is installed in your `$NODE_PATH`, \nthen `mojito foo` will invoke it.\n\n\nDiscussion/Forums\n-----------------\n\nhttp://developer.yahoo.com/forum/Yahoo-Mojito\n\nLicensing and Contributions\n---------------------------\n\nThis software is free to use under the Yahoo! Inc. BSD license. See LICENSE.txt. To contribute to the Mojito project, please see [Contributing](https://github.com/yahoo/mojito/wiki/Contributing-Code-to-Mojito).\n\nThe Mojito project is a [meritocratic, consensus-based community project](https://github.com/yahoo/mojito/wiki/Governance-Model), \nwhich allows anyone to contribute and gain additional responsibilities.\n',
+35 silly resolved     _id: 'mojito-cli@0.0.4',
+35 silly resolved     _from: 'mojito-cli' } ]
+36 info install mojito-cli@0.0.4 into /usr/local/lib
+37 info installOne mojito-cli@0.0.4
+38 verbose from cache /Users/cucumber/.npm/mojito-cli/0.0.4/package/package.json
+39 info /usr/local/lib/node_modules/mojito-cli unbuild
+40 verbose read json /usr/local/lib/node_modules/mojito-cli/package.json
+41 verbose tar unpack /Users/cucumber/.npm/mojito-cli/0.0.4/package.tgz
+42 silly lockFile 112fb3e0-ocal-lib-node-modules-mojito-cli /usr/local/lib/node_modules/mojito-cli
+43 verbose lock /usr/local/lib/node_modules/mojito-cli /Users/cucumber/.npm/112fb3e0-ocal-lib-node-modules-mojito-cli.lock
+44 silly gunzTarPerm modes [ '755', '644' ]
+45 silly gunzTarPerm extractEntry package.json
+46 silly gunzTarPerm extractEntry .npmignore
+47 silly gunzTarPerm extractEntry README.md
+48 silly gunzTarPerm extractEntry cli.js
+49 silly gunzTarPerm extractEntry config.json
+50 silly gunzTarPerm extractEntry commands/help.js
+51 silly gunzTarPerm extractEntry commands/info.js
+52 silly gunzTarPerm extractEntry commands/version.js
+53 silly gunzTarPerm extractEntry .travis.yml
+54 silly gunzTarPerm extractEntry lib/getenv.js
+55 silly gunzTarPerm extractEntry lib/getopts.js
+56 silly gunzTarPerm extractEntry lib/log.js
+57 silly gunzTarPerm extractEntry LICENSE.txt
+58 silly gunzTarPerm extractEntry bin/mojito
+59 silly gunzTarPerm extractEntry .jshintrc
+60 silly gunzTarPerm extractEntry scripts/preinstall.sh
+61 silly gunzTarPerm extractEntry tests/cli-load.js
+62 silly gunzTarPerm extractEntry tests/cli.js
+63 silly gunzTarPerm extractEntry tests/getenv.js
+64 silly gunzTarPerm extractEntry tests/getopts.js
+65 silly gunzTarPerm extractEntry tests/help.js
+66 silly gunzTarPerm extractEntry tests/index.js
+67 silly gunzTarPerm extractEntry tests/info.js
+68 silly gunzTarPerm extractEntry tests/logtest.js
+69 silly gunzTarPerm extractEntry tests/version.js
+70 silly gunzTarPerm extractEntry tests/fixtures/i_am_a_bad_module.js
+71 silly gunzTarPerm extractEntry tests/fixtures/incomplete/package.json
+72 silly gunzTarPerm extractEntry tests/fixtures/missingMojito/package.json
+73 silly gunzTarPerm extractEntry tests/fixtures/someapp/package.json
+74 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/api.js
+75 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/css/external-small.png
+76 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/css/logo.png
+77 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/css/main.css
+78 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/favicon.png
+79 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/img/spinner.gif
+80 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/index.html
+81 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/js/api-filter.js
+82 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/js/api-list.js
+83 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/js/api-search.js
+84 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/js/apidocs.js
+85 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/js/yui-prettify.js
+86 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/vendor/prettify/prettify-min.js
+87 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/vendor/prettify/CHANGES.html
+88 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/vendor/prettify/COPYING
+89 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/vendor/prettify/prettify-min.css
+90 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/assets/vendor/prettify/README.html
+91 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/classes/index.html
+92 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/data.json
+93 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/files/index.html
+94 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/index.html
+95 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/alias_test/modules/index.html
+96 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/api.js
+97 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/css/external-small.png
+98 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/css/logo.png
+99 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/css/main.css
+100 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/favicon.png
+101 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/img/spinner.gif
+102 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/index.html
+103 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/js/api-filter.js
+104 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/js/api-list.js
+105 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/js/api-search.js
+106 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/js/apidocs.js
+107 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/js/yui-prettify.js
+108 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/vendor/prettify/prettify-min.js
+109 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/vendor/prettify/CHANGES.html
+110 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/vendor/prettify/COPYING
+111 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/vendor/prettify/prettify-min.css
+112 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/assets/vendor/prettify/README.html
+113 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/classes/index.html
+114 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/data.json
+115 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/files/index.html
+116 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/index.html
+117 silly gunzTarPerm extractEntry tests/fixtures/someapp/artifacts/docs/someapp/modules/index.html
+118 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/package.json
+119 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/app/commands/version.js
+120 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/app/commands/create.js
+121 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/app/commands/docs.js
+122 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/app/commands/gv.js
+123 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/app/commands/help.js
+124 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/app/commands/compile.js
+125 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/app/commands/jslint.js
+126 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/app/commands/profiler.js
+127 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/app/commands/start.js
+128 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/app/commands/test.js
+129 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/app/commands/info.js
+130 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/app/commands/build
+131 silly gunzTarPerm extractEntry tests/fixtures/someapp/node_modules/mojito/lib/management/cli.js
+132 verbose read json /usr/local/lib/node_modules/mojito-cli/package.json
+133 silly lockFile 112fb3e0-ocal-lib-node-modules-mojito-cli /usr/local/lib/node_modules/mojito-cli
+134 info preinstall mojito-cli@0.0.4
+135 verbose unsafe-perm in lifecycle false
+136 verbose set uid from=0 to=nobody
+137 verbose set uid from=0 to=-2
+138 silly exec sh "-c" "scripts/preinstall.sh"
+139 silly sh,-c,scripts/preinstall.sh,/usr/local/lib/node_modules/mojito-cli spawning
+140 info mojito-cli@0.0.4 Failed to exec preinstall script
+141 info /usr/local/lib/node_modules/mojito-cli unbuild
+142 verbose from cache /usr/local/lib/node_modules/mojito-cli/package.json
+143 info preuninstall mojito-cli@0.0.4
+144 info uninstall mojito-cli@0.0.4
+145 verbose true,/usr/local/lib/node_modules,/usr/local/lib/node_modules unbuild mojito-cli@0.0.4
+146 verbose /usr/local/bin,[object Object] binRoot
+147 error error rolling back Error: Refusing to delete: /usr/local/bin/mojito not in /usr/local/lib/node_modules/mojito-cli
+147 error error rolling back     at clobberFail (/usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:41:12)
+147 error error rolling back     at next (/usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:27:14)
+147 error error rolling back     at /usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:36:12
+147 error error rolling back     at Object.oncomplete (fs.js:297:15)
+147 error error rolling back  mojito-cli@0.0.4 { [Error: Refusing to delete: /usr/local/bin/mojito not in /usr/local/lib/node_modules/mojito-cli] code: 'EEXIST', path: '/usr/local/bin/mojito' }
+148 error mojito-cli@0.0.4 preinstall: `scripts/preinstall.sh`
+148 error `sh "-c" "scripts/preinstall.sh"` failed with 3
+149 error Failed at the mojito-cli@0.0.4 preinstall script.
+149 error This is most likely a problem with the mojito-cli package,
+149 error not with npm itself.
+149 error Tell the author that this fails on your system:
+149 error     scripts/preinstall.sh
+149 error You can get their info via:
+149 error     npm owner ls mojito-cli
+149 error There is likely additional logging output above.
+150 error System Darwin 12.3.0
+151 error command "node" "/usr/local/bin/npm" "install" "--global" "mojito-cli"
+152 error cwd /Users/cucumber/Documents/ruben/social_app/final/reifyme
+153 error node -v v0.8.14
+154 error npm -v 1.1.65
+155 error code ELIFECYCLE
+156 verbose exit [ 1, true ]

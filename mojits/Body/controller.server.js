@@ -18,6 +18,10 @@ YUI.add('Body', function(Y, NAME) {
      */
     Y.namespace('mojito.controllers')[NAME] = {
 
+         
+        
+   
+
         /**
          * Method corresponding to the 'index' action.
          *
@@ -25,10 +29,19 @@ YUI.add('Body', function(Y, NAME) {
          *        to the Mojito API.
          */
         index: function(ac) {
-            
-            ac.composite.done();
+        var model = ac.models.get('BodyModelUser');
+
+          ac.composite.done();
+
+           model.search(function(data){
+                 Y.log("from controler")
+                 Y.log(data);
+                 Y.log("--------from controler-----------------")
+               
+            })
+           
         }
 
     };
 
-}, '0.0.1', {requires: ['mojito', 'mojito-composite-addon']});
+}, '0.0.1', {requires: ['mojito', 'mojito-composite-addon', 'mojito-params-addon', 'mojito-models-addon', 'BodyModelUser']});

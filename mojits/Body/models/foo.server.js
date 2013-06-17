@@ -2,7 +2,7 @@
  * Copyright (c) 2012 Yahoo! Inc. All rights reserved.
  */
 /*jslint anon:true, sloppy:true, nomen:true*/
-YUI.add('BodyModelFoo', function(Y, NAME) {
+YUI.add('BodyModelUser', function(Y, NAME) {
 
 /**
  * The BodyModelFoo module.
@@ -29,7 +29,7 @@ YUI.add('BodyModelFoo', function(Y, NAME) {
          *        data has been retrieved.
          */
         getData: function(callback) {
-            callback(null, { some: 'data' });
+            callback({some:'data'});
         }
 
     };
